@@ -66,23 +66,23 @@
       <div>
         <div class="eyebrow">Wagon rides</div>
         <h2 style="font-size:20px;font-weight:500;color:#173404;margin-bottom:0.75rem;">The best way to see the whole farm</h2>
-        <p style="font-size:13px;color:#3B6D11;line-height:1.8;">Our tractor-pulled wagon loops the entire property every 15 minutes, stopping near each attraction. Hop on, hop off, or ride the full loop — included free with every day pass and season pass.</p>
+        <p style="font-size:13px;color:#3B6D11;line-height:1.8;">Our tractor-pulled wagon loops the entire property every 15 minutes, stopping near each attraction. Hop on, hop off, or ride the full loop — included free with every all inclusive pass and season pass.</p>
       </div>
       <div style="background:rgba(255,255,255,0.5);border:0.5px solid #97C459;border-radius:12px;padding:1.25rem;">
         <div style="font-size:12px;font-weight:500;color:#173404;margin-bottom:10px;"><i class="ti ti-clock" style="font-size:13px;vertical-align:-1px;margin-right:5px;"></i>Sample departure times</div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">9:00 AM</span><span style="color:#3B6D11;">First departure</span></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">Every 15 min</span><span style="color:#3B6D11;">All day long</span></div>
         <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">5:45 PM</span><span style="color:#3B6D11;">Last departure</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;"><span style="font-weight:500;color:#27500A;">$4 walk-up</span><span style="color:#3B6D11;">Free with day pass</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;"><span style="font-weight:500;color:#27500A;">$4 walk-up</span><span style="color:#3B6D11;">Free with all inclusive pass</span></div>
       </div>
     </div>
   </div>
 
   <div class="cta-band">
     <h2>Ready to plan your visit?</h2>
-    <p>Grab a $20 all-inclusive day pass and experience everything the farm has to offer.</p>
+    <p>Grab a $20 all inclusive pass and experience everything the farm has to offer.</p>
     <div class="cta-btns">
-      <a href="pricing.html"><button class="btn-primary">Get a day pass — $20</button></a>
+      <a href="pricing.html"><button class="btn-primary">Get an all inclusive pass — $20</button></a>
       <a href="pricing.html"><button class="btn-secondary">See all pricing</button></a>
     </div>
   </div>
@@ -101,17 +101,18 @@
 <script>
 const seasons = [
   { id:'spring', label:'Spring', color:'#D4537E', months:'April – May', attrs:[
-    { name:'Flower field', icon:'ti-flower', imgBg:'#FBEAF0', imgColor:'#D4537E', open:true, desc:'Walk two acres of sunflowers, lavender, zinnias, and dahlias and cut your own bouquet. Clippers and wrap provided.', details:['2 acres of u-pick blooms','Clippers + wrap included','Peak bloom Apr – late May'], price:'$12 per bouquet · Free with day pass' }
+    { name:'Flower field', icon:'ti-flower', imgBg:'#FBEAF0', imgColor:'#D4537E', open:true, desc:'Walk two acres of sunflowers, lavender, zinnias, and dahlias and cut your own bouquet. Clippers and wrap provided.', details:['2 acres of u-pick blooms','Clippers + wrap included','Peak bloom Apr – late May'], price:'$12 per bouquet · Free with all inclusive pass' },
+    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' }
   ]},
   { id:'summer', label:'Summer', color:'#639922', months:'June – August', attrs:[
-    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with day pass' },
-    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:true, desc:'Pick your own apples from three acres of orchard rows. Early summer varieties from late July, fall varieties through October.', details:['3 acres pick-your-own','Early varieties from late July','Wagon access through orchard'], price:'$10 half-peck · $18 full peck · Free with day pass' }
+    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
+    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:true, desc:'Pick your own apples from three acres of orchard rows. Early summer varieties from late July, fall varieties through October.', details:['3 acres pick-your-own','Early varieties from late July','Wagon access through orchard'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
   ]},
   { id:'fall', label:'Fall', color:'#EF9F27', months:'September – October', attrs:[
-    { name:'Pumpkin patch', icon:'ti-plant', imgBg:'#FAEEDA', imgColor:'#BA7517', open:false, desc:'Three acres of pumpkins in every shape and size, ready to self-harvest from the vine. Wheelbarrow stations at each row.', details:['3 acres of pumpkins','Mini, medium + large varieties','Self-harvest from the vine'], price:'Mini $8 · Medium $14 · Large $20 · Free with day pass' },
-    { name:'Hay maze', icon:'ti-directions', imgBg:'#F1EFE8', imgColor:'#5F5E5A', open:false, desc:'Five acres of hay bale corridors with a family-friendly path and a longer challenge route. Direct access from the parking lot.', details:['5 acres · two difficulty routes','Direct parking lot access','Fall season only'], price:'$10 per person · Free with day pass' },
-    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:false, desc:'The petting zoo stays open through October. Same great animals, set against the colors of the season.', details:['Open through end of October','Hand washing at exit'], price:'$5 per person · Free with day pass' },
-    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:false, desc:'Fall varieties come in through October. The orchard rows are one of the most scenic spots on the farm in autumn.', details:['Fall varieties through October','Scenic fall foliage rows'], price:'$10 half-peck · $18 full peck · Free with day pass' }
+    { name:'Pumpkin patch', icon:'ti-plant', imgBg:'#FAEEDA', imgColor:'#BA7517', open:false, desc:'Three acres of pumpkins in every shape and size, ready to self-harvest from the vine. Wheelbarrow stations at each row.', details:['3 acres of pumpkins','Mini, medium + large varieties','Self-harvest from the vine'], price:'Mini $8 · Medium $14 · Large $20 · Free with all inclusive pass' },
+    { name:'Hay maze', icon:'ti-directions', imgBg:'#F1EFE8', imgColor:'#5F5E5A', open:false, desc:'Five acres of hay bale corridors with a family-friendly path and a longer challenge route. Direct access from the parking lot.', details:['5 acres · two difficulty routes','Direct parking lot access','Fall season only'], price:'$10 per person · Free with all inclusive pass' },
+    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'The petting zoo stays open through October. Same great animals, set against the colors of the season.', details:['Open through end of October','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
+    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:false, desc:'Fall varieties come in through October. The orchard rows are one of the most scenic spots on the farm in autumn.', details:['Fall varieties through October','Scenic fall foliage rows'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
   ]}
 ];
 
