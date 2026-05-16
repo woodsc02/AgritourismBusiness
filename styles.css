@@ -372,6 +372,35 @@ img { display: block; max-width: 100%; }
   font-size: 12px;
 }
 
+/* --- Seasonal themes --- */
+.season-spring { --accent-50: #FBEAF0; --accent-600: #D4537E; --accent-800: #993556; --accent-900: #791F1F; }
+.season-summer { --accent-50: #EAF3DE; --accent-600: #639922; --accent-800: #27500A; --accent-900: #173404; }
+.season-fall   { --accent-50: #FAEEDA; --accent-600: #EF9F27; --accent-800: #BA7517; --accent-900: #633806; }
+
+/* Apply seasonal accents to common blocks when a season wrapper is present */
+.season-spring .page-hero, .season-spring .cta-band, .season-spring .email-band, .season-spring .quote-band { background: var(--accent-50); }
+.season-spring .page-hero h1, .season-spring .cta-band h2, .season-spring .quote-text { color: var(--accent-900); }
+.season-spring .btn-primary, .season-spring .nav-cta { background: var(--accent-600); }
+.season-spring .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+
+.season-summer .page-hero, .season-summer .cta-band, .season-summer .email-band, .season-summer .quote-band { background: var(--accent-50); }
+.season-summer .page-hero h1, .season-summer .cta-band h2, .season-summer .quote-text { color: var(--accent-900); }
+.season-summer .btn-primary, .season-summer .nav-cta { background: var(--accent-600); }
+.season-summer .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+
+.season-fall .page-hero, .season-fall .cta-band, .season-fall .email-band, .season-fall .quote-band { background: var(--accent-50); }
+.season-fall .page-hero h1, .season-fall .cta-band h2, .season-fall .quote-text { color: var(--accent-900); }
+.season-fall .btn-primary, .season-fall .nav-cta { background: var(--accent-600); }
+.season-fall .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+
+/* Attraction image styling */
+.attr-img { height: 90px; overflow: hidden; border-bottom: var(--border); }
+.attr-img img { width: 100%; height: 90px; object-fit: cover; display: block; }
+
+/* Home preview image block */
+.home-attr-media { height: 90px; overflow: hidden; border-radius: 10px 10px 0 0; }
+.home-attr-media img { width: 100%; height: 90px; object-fit: cover; display: block; }
+
 /* --- Quote --- */
 .quote-band {
   background: var(--green-50);

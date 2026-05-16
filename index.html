@@ -143,22 +143,24 @@
 </div>
 <script>
 const attrs = [
-  {name:'Petting zoo',icon:'ti-paw',seasons:['spring','summer','fall'],open:true},
-  {name:'Flower field',icon:'ti-flower',seasons:['spring','summer'],open:true},
-  {name:'Apple orchard',icon:'ti-apple',seasons:['summer','fall'],open:true},
-  {name:'Pumpkin patch',icon:'ti-plant',seasons:['fall'],open:false},
-  {name:'Hay maze',icon:'ti-directions',seasons:['fall'],open:false},
-  {name:'Wagon rides',icon:'ti-tractor',seasons:['spring','summer','fall'],open:true},
+  {name:'Petting zoo',img:'images/petting-zoo.jpg',seasons:['spring','summer','fall'],open:true},
+  {name:'Flower field',img:'images/sunflowers.jpg',seasons:['spring','summer'],open:true},
+  {name:'Apple orchard',img:'images/apple-orchard.jpg',seasons:['summer','fall'],open:true},
+  {name:'Pumpkin patch',img:'images/pumpkins.jpg',seasons:['fall'],open:false},
+  {name:'Hay maze',img:'images/hay-maze.jpg',seasons:['fall'],open:false},
+  {name:'Wagon rides',img:'images/tulips.jpg',seasons:['spring','summer','fall'],open:true},
 ];
 function filterHome(s,btn){
   document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   const f=s==='all'?attrs:attrs.filter(a=>a.seasons.includes(s));
   document.getElementById('home-attr').innerHTML=f.map(a=>`
-    <div style="background:var(--bg);border:0.5px solid rgba(0,0,0,0.1);border-radius:12px;padding:1rem;">
-      <div style="font-size:20px;color:#3B6D11;margin-bottom:8px;"><i class="ti ${a.icon}"></i></div>
-      <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;">${a.name}</div>
-      <span style="font-size:10px;padding:2px 7px;border-radius:10px;${a.open?'background:#EAF3DE;color:#27500A':'background:#FAEEDA;color:#633806'}">${a.open?'Open now':'Opens in fall'}</span>
+    <div style="background:var(--bg);border:0.5px solid rgba(0,0,0,0.1);border-radius:12px;overflow:hidden;">
+      <div class="home-attr-media"><img src="${a.img}" alt="${a.name}"></div>
+      <div style="padding:0.85rem;">
+        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;">${a.name}</div>
+        <span style="font-size:10px;padding:2px 7px;border-radius:10px;${a.open?'background:#EAF3DE;color:#27500A':'background:#FAEEDA;color:#633806'}">${a.open?'Open now':'Opens in fall'}</span>
+      </div>
     </div>`).join('');
 }
 filterHome('all',document.querySelector('.stab.active'));

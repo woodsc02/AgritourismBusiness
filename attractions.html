@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
   <style>
     .attr-card { background:var(--bg); border:0.5px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden; }
-    .attr-img  { height:90px; display:flex; align-items:center; justify-content:center; font-size:32px; }
+    .attr-img  { height:90px; overflow:hidden; }
     .attr-body { padding:1rem; }
     .attr-top  { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:6px; }
     .attr-name { font-size:13px; font-weight:500; color:var(--text); }
@@ -101,24 +101,24 @@
 <script>
 const seasons = [
   { id:'spring', label:'Spring', color:'#D4537E', months:'April – May', attrs:[
-    { name:'Flower field', icon:'ti-flower', imgBg:'#FBEAF0', imgColor:'#D4537E', open:true, desc:'Walk two acres of sunflowers, lavender, zinnias, and dahlias and cut your own bouquet. Clippers and wrap provided.', details:['2 acres of u-pick blooms','Clippers + wrap included','Peak bloom Apr – late May'], price:'$12 per bouquet · Free with all inclusive pass' },
-    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' }
+    { name:'Flower field', img:'images/sunflowers.jpg', imgBg:'#FBEAF0', imgColor:'#D4537E', open:true, desc:'Walk two acres of sunflowers, lavender, zinnias, and dahlias and cut your own bouquet. Clippers and wrap provided.', details:['2 acres of u-pick blooms','Clippers + wrap included','Peak bloom Apr – late May'], price:'$12 per bouquet · Free with all inclusive pass' },
+    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' }
   ]},
   { id:'summer', label:'Summer', color:'#639922', months:'June – August', attrs:[
-    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
-    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:true, desc:'Pick your own apples from three acres of orchard rows. Early summer varieties from late July, fall varieties through October.', details:['3 acres pick-your-own','Early varieties from late July','Wagon access through orchard'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
+    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
+    { name:'Apple orchard', img:'images/apple-orchard.jpg', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:true, desc:'Pick your own apples from three acres of orchard rows. Early summer varieties from late July, fall varieties through October.', details:['3 acres pick-your-own','Early varieties from late July','Wagon access through orchard'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
   ]},
   { id:'fall', label:'Fall', color:'#EF9F27', months:'September – October', attrs:[
-    { name:'Pumpkin patch', icon:'ti-plant', imgBg:'#FAEEDA', imgColor:'#BA7517', open:false, desc:'Three acres of pumpkins in every shape and size, ready to self-harvest from the vine. Wheelbarrow stations at each row.', details:['3 acres of pumpkins','Mini, medium + large varieties','Self-harvest from the vine'], price:'Mini $8 · Medium $14 · Large $20 · Free with all inclusive pass' },
-    { name:'Hay maze', icon:'ti-directions', imgBg:'#F1EFE8', imgColor:'#5F5E5A', open:false, desc:'Five acres of hay bale corridors with a family-friendly path and a longer challenge route. Direct access from the parking lot.', details:['5 acres · two difficulty routes','Direct parking lot access','Fall season only'], price:'$10 per person · Free with all inclusive pass' },
-    { name:'Petting zoo', icon:'ti-paw', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'The petting zoo stays open through October. Same great animals, set against the colors of the season.', details:['Open through end of October','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
-    { name:'Apple orchard', icon:'ti-apple', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:false, desc:'Fall varieties come in through October. The orchard rows are one of the most scenic spots on the farm in autumn.', details:['Fall varieties through October','Scenic fall foliage rows'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
+    { name:'Pumpkin patch', img:'images/pumpkins.jpg', imgBg:'#FAEEDA', imgColor:'#BA7517', open:false, desc:'Three acres of pumpkins in every shape and size, ready to self-harvest from the vine. Wheelbarrow stations at each row.', details:['3 acres of pumpkins','Mini, medium + large varieties','Self-harvest from the vine'], price:'Mini $8 · Medium $14 · Large $20 · Free with all inclusive pass' },
+    { name:'Hay maze', img:'images/hay-maze.jpg', imgBg:'#F1EFE8', imgColor:'#5F5E5A', open:false, desc:'Five acres of hay bale corridors with a family-friendly path and a longer challenge route. Direct access from the parking lot.', details:['5 acres · two difficulty routes','Direct parking lot access','Fall season only'], price:'$10 per person · Free with all inclusive pass' },
+    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'The petting zoo stays open through October. Same great animals, set against the colors of the season.', details:['Open through end of October','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
+    { name:'Apple orchard', img:'images/apple-orchard.jpg', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:false, desc:'Fall varieties come in through October. The orchard rows are one of the most scenic spots on the farm in autumn.', details:['Fall varieties through October','Scenic fall foliage rows'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
   ]}
 ];
 
 function buildCard(a){
   return `<div class="attr-card">
-    <div class="attr-img" style="background:${a.imgBg};color:${a.imgColor};"><i class="ti ${a.icon}"></i></div>
+    <div class="attr-img"><img src="${a.img||'images/placeholder.jpg'}" alt="${a.name}"></div>
     <div class="attr-body">
       <div class="attr-top"><div class="attr-name">${a.name}</div><span class="${a.open?'badge badge-open':'badge badge-soon'}">${a.open?'Open now':'Opens in fall'}</span></div>
       <p class="attr-desc">${a.desc}</p>
@@ -129,7 +129,7 @@ function buildCard(a){
 }
 
 function buildSection(s){
-  return `<div style="padding:2rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.08);background:${s.id==='summer'?'var(--bg-subtle)':'var(--bg)'};">
+  return `<div class="section season-${s.id}" style="padding:2rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.08);">
     <div class="sec-head"><div class="sec-dot" style="background:${s.color};"></div><h2 style="font-size:18px;font-weight:500;">${s.label} attractions</h2><span style="font-size:12px;color:var(--text-muted);margin-left:4px;">${s.months}</span></div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">${s.attrs.map(buildCard).join('')}</div>
   </div>`;
