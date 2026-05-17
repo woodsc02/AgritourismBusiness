@@ -48,6 +48,7 @@
   --text:      #1a1a18;
   --text-muted:#5F5E5A;
   --text-hint: #888780;
+  --page-bg:   #ffffff;
 }
 
 /* --- Base --- */
@@ -64,7 +65,7 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* --- Layout wrapper --- */
-.page { width: 100%; max-width: none; margin: 0; background: var(--bg); }
+.page { width: 100%; max-width: none; margin: 0; background: var(--page-bg, var(--bg)); }
 
 /* --- Nav --- */
 .nav {
@@ -103,7 +104,7 @@ img { display: block; max-width: 100%; }
 
 /* --- Page hero --- */
 .page-hero {
-  background: var(--green-50);
+  background: var(--accent-50);
   padding: 3rem 2rem;
   border-bottom: var(--border);
   text-align: center;
@@ -111,13 +112,13 @@ img { display: block; max-width: 100%; }
 .page-hero h1 {
   font-size: 28px;
   font-weight: 500;
-  color: var(--green-900);
+  color: var(--accent-900);
   margin-bottom: 0.75rem;
   line-height: 1.25;
 }
 .page-hero p {
   font-size: 14px;
-  color: var(--green-800);
+  color: var(--accent-800);
   line-height: 1.75;
   max-width: 440px;
   margin: 0 auto;
@@ -127,7 +128,8 @@ img { display: block; max-width: 100%; }
 .eyebrow {
   font-size: 11px;
   font-weight: 500;
-  color: var(--green-600);
+  color: var(--accent-900);
+  background: var(--accent-50);
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 6px;
@@ -275,53 +277,53 @@ img { display: block; max-width: 100%; }
 
 /* --- CTA band --- */
 .cta-band {
-  background: var(--green-50);
+  background: var(--accent-50);
   padding: 2.5rem 2rem;
   text-align: center;
   border-bottom: var(--border);
 }
-.cta-band h2 { font-size: 20px; font-weight: 500; color: var(--green-900); margin-bottom: 6px; }
-.cta-band p  { font-size: 13px; color: var(--green-800); margin-bottom: 1.25rem; }
+.cta-band h2 { font-size: 20px; font-weight: 500; color: var(--accent-900); margin-bottom: 6px; }
+.cta-band p  { font-size: 13px; color: var(--accent-800); margin-bottom: 1.25rem; }
 .cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
-  background: var(--green-600);
-  color: #E1F5EE;
+  background: var(--accent-600);
+  color: #fff;
   border: none;
   padding: 10px 22px;
   border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.15s;
+  transition: background 0.15s, transform 0.15s;
 }
-.btn-primary:hover { background: var(--green-800); }
+.btn-primary:hover { background: var(--accent-800); transform: translateY(-1px); }
 .btn-secondary {
   background: transparent;
-  color: var(--green-800);
-  border: 1.5px solid var(--green-600);
+  color: var(--accent-800);
+  border: 1.5px solid var(--accent-600);
   padding: 10px 22px;
   border-radius: var(--radius-md);
   font-size: 13px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.15s;
+  transition: background 0.15s, color 0.15s;
 }
-.btn-secondary:hover { background: var(--green-50); }
+.btn-secondary:hover { background: var(--accent-50); color: var(--accent-900); }
 
 /* --- Email signup --- */
 .email-band {
-  background: var(--green-50);
+  background: var(--accent-50);
   padding: 2.5rem 2rem;
   text-align: center;
   border-bottom: var(--border);
 }
-.email-band h2 { font-size: 20px; font-weight: 500; color: var(--green-900); margin-bottom: 6px; }
-.email-band p  { font-size: 13px; color: var(--green-800); margin-bottom: 1.25rem; }
+.email-band h2 { font-size: 20px; font-weight: 500; color: var(--accent-900); margin-bottom: 6px; }
+.email-band p  { font-size: 13px; color: var(--accent-800); margin-bottom: 1.25rem; }
 .email-form { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .email-form input {
   padding: 8px 14px;
   border-radius: var(--radius-md);
-  border: 0.5px solid #97C459;
+  border: 0.5px solid var(--accent-600);
   background: white;
   font-size: 13px;
   width: 230px;
@@ -329,8 +331,8 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-sans);
 }
 .email-form button {
-  background: var(--green-600);
-  color: #E1F5EE;
+  background: var(--accent-600);
+  color: #fff;
   border: none;
   padding: 8px 18px;
   border-radius: var(--radius-md);
@@ -373,25 +375,31 @@ img { display: block; max-width: 100%; }
 }
 
 /* --- Seasonal themes --- */
-.season-spring { --accent-50: #FBEAF0; --accent-600: #D4537E; --accent-800: #993556; --accent-900: #791F1F; }
-.season-summer { --accent-50: #EAF3DE; --accent-600: #639922; --accent-800: #27500A; --accent-900: #173404; }
-.season-fall   { --accent-50: #FAEEDA; --accent-600: #EF9F27; --accent-800: #BA7517; --accent-900: #633806; }
+.season-spring { --page-bg: #FFF1F5; --accent-50: #FBEAF0; --accent-600: #D4537E; --accent-800: #993556; --accent-900: #791F1F; }
+.season-summer { --page-bg: #F7FBEE; --accent-50: #EAF3DE; --accent-600: #639922; --accent-800: #27500A; --accent-900: #173404; }
+.season-fall   { --page-bg: #FFF6E8; --accent-50: #FAEEDA; --accent-600: #EF9F27; --accent-800: #BA7517; --accent-900: #633806; }
 
 /* Apply seasonal accents to common blocks when a season wrapper is present */
 .season-spring .page-hero, .season-spring .cta-band, .season-spring .email-band, .season-spring .quote-band { background: var(--accent-50); }
 .season-spring .page-hero h1, .season-spring .cta-band h2, .season-spring .quote-text { color: var(--accent-900); }
 .season-spring .btn-primary, .season-spring .nav-cta { background: var(--accent-600); }
 .season-spring .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+.season-spring .nav { background: rgba(212,83,126,0.08); border-bottom-color: rgba(212,83,126,0.15); }
+.season-spring .nav-links a:hover, .season-spring .nav-links a.active { color: var(--accent-900); }
 
 .season-summer .page-hero, .season-summer .cta-band, .season-summer .email-band, .season-summer .quote-band { background: var(--accent-50); }
 .season-summer .page-hero h1, .season-summer .cta-band h2, .season-summer .quote-text { color: var(--accent-900); }
 .season-summer .btn-primary, .season-summer .nav-cta { background: var(--accent-600); }
 .season-summer .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+.season-summer .nav { background: rgba(99,153,34,0.08); border-bottom-color: rgba(99,153,34,0.15); }
+.season-summer .nav-links a:hover, .season-summer .nav-links a.active { color: var(--accent-900); }
 
 .season-fall .page-hero, .season-fall .cta-band, .season-fall .email-band, .season-fall .quote-band { background: var(--accent-50); }
 .season-fall .page-hero h1, .season-fall .cta-band h2, .season-fall .quote-text { color: var(--accent-900); }
 .season-fall .btn-primary, .season-fall .nav-cta { background: var(--accent-600); }
 .season-fall .btn-secondary { border-color: var(--accent-600); color: var(--accent-800); }
+.season-fall .nav { background: rgba(239,159,39,0.08); border-bottom-color: rgba(239,159,39,0.15); }
+.season-fall .nav-links a:hover, .season-fall .nav-links a.active { color: var(--accent-900); }
 
 /* Attraction image styling */
 .attr-img { height: 90px; overflow: hidden; border-bottom: var(--border); }
@@ -403,7 +411,7 @@ img { display: block; max-width: 100%; }
 
 /* --- Quote --- */
 .quote-band {
-  background: var(--green-50);
+  background: var(--accent-50);
   padding: 2.5rem 2rem;
   text-align: center;
   border-bottom: var(--border);
@@ -411,13 +419,13 @@ img { display: block; max-width: 100%; }
 .quote-text {
   font-size: 17px;
   font-weight: 500;
-  color: var(--green-900);
+  color: var(--accent-900);
   line-height: 1.6;
   max-width: 480px;
   margin: 0 auto 0.75rem;
   font-style: italic;
 }
-.quote-attr { font-size: 12px; color: var(--green-800); }
+.quote-attr { font-size: 12px; color: var(--accent-800); }
 
 /* --- Hours card --- */
 .hours-card { background: var(--bg); border: var(--border); border-radius: var(--radius-lg); overflow: hidden; }
