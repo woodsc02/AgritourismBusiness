@@ -131,6 +131,19 @@ img { display: block; max-width: 100%; }
   border-bottom: var(--border);
   text-align: center;
 }
+.page-hero.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .page-hero.two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
 .page-hero h1 {
   font-size: 32px;
   font-weight: 600;
