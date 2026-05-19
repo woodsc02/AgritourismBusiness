@@ -354,8 +354,16 @@ button, .btn-primary, .btn-secondary {
 .cta-btns {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 0.85rem;
+  margin: 1.75rem auto 2.5rem;
+}
+.cta-btns a {
+  display: inline-flex;
+}
+.cta-btns button {
+  min-width: 190px;
 }
 
 .email-band {
