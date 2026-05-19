@@ -62,12 +62,20 @@ body {
   font-family: var(--font-sans);
   font-size: 14px;
   color: var(--text);
-  background: var(--bg-subtle);
+  background: linear-gradient(180deg, var(--page-bg, #ffffff), var(--bg-subtle));
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-a { color: inherit; text-decoration: none; }
+/* Links: use site accent */
+a { color: var(--accent-600); text-decoration: none; transition: color 0.12s; }
+a:visited { color: var(--accent-800); }
+a:hover, a:focus { color: var(--accent-900); text-decoration: underline; }
+
+/* Typography accents */
+h1, h2, h3 { color: var(--accent-900); }
+h1 { font-family: var(--font); }
+p { color: var(--text); }
 img { display: block; max-width: 100%; }
 
 /* --- Layout wrapper --- */
