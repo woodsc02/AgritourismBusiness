@@ -1,147 +1,138 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Attractions — Hollow Creek Farm</title>
+  <title>Attractions | HollowCreek Farm</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
-  <style>
-    .attr-card { background:var(--bg); border:0.5px solid rgba(0,0,0,0.1); border-radius:12px; overflow:hidden; }
-    .attr-img  { height:90px; overflow:hidden; }
-    .attr-body { padding:1rem; }
-    .attr-top  { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:6px; }
-    .attr-name { font-size:13px; font-weight:500; color:var(--text); }
-    .attr-desc { font-size:12px; color:var(--text-muted); line-height:1.6; margin-bottom:10px; }
-    .attr-detail { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted); margin-bottom:4px; }
-    .attr-price { font-size:12px; font-weight:500; color:var(--accent-800); margin-top:8px; padding-top:8px; border-top:0.5px solid rgba(0,0,0,0.08); }
-    .sec-head  { display:flex; align-items:center; gap:10px; margin-bottom:1.25rem; }
-    .sec-dot   { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-  </style>
 </head>
 <body>
-<div class="page season-spring">
-
-  <nav class="nav">
-    <div class="nav-logo"><span>Hollow</span>Creek Farm</div>
-    <div class="nav-links">
-      <a href="attractions.html" class="active">Attractions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="visit.html">Plan your visit</a>
-      <a href="about.html">About us</a>
-    </div>
-    <a href="pricing.html"><button class="nav-cta">Buy tickets</button></a>
-  </nav>
-
-  <div style="padding:0.75rem 2rem;">
-    <a href="index.html"><button class="btn-secondary">Back to home</button></a>
-  </div>
-
-  <div class="page-hero">
-    <div class="eyebrow">Attractions</div>
-    <h1>Something new every season</h1>
-    <p>From the first flowers of spring to the last pumpkins of fall — six experiences across seven months, all on one working farm just outside Chattanooga.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0.5px solid var(--accent-600);border-radius:12px;overflow:hidden;margin:1.5rem 0 0;">
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid var(--accent-600);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#D4537E;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Spring</div><div style="font-size:11px;color:var(--accent-800);">Apr – May</div></div>
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid var(--accent-600);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#639922;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Summer</div><div style="font-size:11px;color:var(--accent-800);">Jun – Aug</div></div>
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#EF9F27;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Fall</div><div style="font-size:11px;color:var(--accent-800);">Sep – Oct</div></div>
-    </div>
-  </div>
-
-  <div class="filter-bar">
-    <span class="filter-label">Filter by season:</span>
-    <div class="stabs">
-      <button class="stab active" onclick="filter('all',this)">All seasons</button>
-      <button class="stab" onclick="filter('spring',this)">Spring</button>
-      <button class="stab" onclick="filter('summer',this)">Summer</button>
-      <button class="stab" onclick="filter('fall',this)">Fall</button>
-    </div>
-  </div>
-
-  <div id="attr-container"></div>
-
-  <!-- Wagon section -->
-  <div style="background:var(--accent-50);padding:2.5rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.1);">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
-      <div>
-        <div class="eyebrow">Wagon rides</div>
-        <h2 style="font-size:20px;font-weight:500;color:var(--accent-900);margin-bottom:0.75rem;">The best way to see the whole farm</h2>
-        <p style="font-size:13px;color:var(--accent-800);line-height:1.8;">Our tractor-pulled wagon loops the entire property every 15 minutes, stopping near each attraction. Hop on, hop off, or ride the full loop — included free with every all inclusive pass and season pass.</p>
+  <div class="page-shell">
+    <header class="site-nav">
+      <a class="brand" href="index.html"><span>Hollow</span>Creek Farm</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-panel">
+        <a href="index.html">Home</a>
+        <a href="attractions.html" class="active">Attractions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="visit.html">Visit</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="attractions.html" class="active">Attractions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="visit.html">Visit</a>
+        <a href="about.html">About</a>
       </div>
-      <div style="background:rgba(255,255,255,0.5);border:0.5px solid #97C459;border-radius:12px;padding:1.25rem;">
-        <div style="font-size:12px;font-weight:500;color:var(--accent-900);margin-bottom:10px;"><i class="ti ti-clock" style="font-size:13px;vertical-align:-1px;margin-right:5px;"></i>Sample departure times</div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">9:00 AM</span><span style="color:var(--accent-800);">First departure</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">Every 15 min</span><span style="color:var(--accent-800);">All day long</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">5:45 PM</span><span style="color:var(--accent-800);">Last departure</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">$4 walk-up</span><span style="color:var(--accent-800);">Free with all inclusive pass</span></div>
+      <a class="nav-cta" href="pricing.html">Buy Tickets</a>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">Explore the farm</span>
+        <h1 class="hero-title">Attractions to slow down and enjoy</h1>
+        <p class="hero-copy">Each attraction is designed around a real working livestock farm, with thoughtful seasonal experiences rather than flashy gimmicks.</p>
       </div>
-    </div>
+    </section>
+
+    <section class="section">
+      <div class="detail-grid">
+        <article class="detail-card">
+          <div class="section-flag">Petting Zoo</div>
+          <h3>A gentle gathering place</h3>
+          <p>Spring through fall, the petting zoo brings kids close to goats, sheep, and rabbits with soft paths and quiet interactions.</p>
+          <p class="small-note">Seasonal availability: spring–fall</p>
+          <div class="photo-card">Photo: Petting Zoo</div>
+        </article>
+        <article class="detail-card">
+          <div class="section-flag">Flower Field</div>
+          <h3>U-pick blooms for every bouquet</h3>
+          <p>May through July, families can walk among fragrant blooms and gather fresh flowers with clippers and wrapping included.</p>
+          <p class="small-note">Seasonal availability: May–July</p>
+          <div class="photo-card">Photo: Flower Field</div>
+        </article>
+        <article class="detail-card">
+          <div class="section-flag">Apple Orchard</div>
+          <h3>Harvest your own orchard apples</h3>
+          <p>August through October, wander orchard rows and pick crisp apples for a true Idaho harvest experience.</p>
+          <p class="small-note">Seasonal availability: August–October</p>
+          <div class="photo-card">Photo: Apple Orchard</div>
+        </article>
+        <article class="detail-card">
+          <div class="section-flag">Pumpkin Patch</div>
+          <h3>Autumn fields of pumpkins</h3>
+          <p>September through October, choose from a wide patch of pumpkins, gourds, and fall textures in a welcoming farm setting.</p>
+          <p class="small-note">Seasonal availability: September–October</p>
+          <div class="photo-card">Photo: Pumpkin Patch</div>
+        </article>
+        <article class="detail-card">
+          <div class="section-flag">Hay Maze</div>
+          <h3>Family-friendly maze adventure</h3>
+          <p>Spring through fall, the hay maze invites exploration through winding paths and hidden farm discoveries.</p>
+          <p class="small-note">Seasonal availability: spring–fall</p>
+          <div class="photo-card">Photo: Hay Maze</div>
+        </article>
+        <article class="detail-card">
+          <div class="section-flag">Haunted Maze</div>
+          <h3>October evening adventure</h3>
+          <p>A ticketed, October-only maze with gentle scares and seasonal storytelling for older kids and adults.</p>
+          <p class="small-note">Seasonal availability: October only</p>
+          <div class="photo-card">Photo: Haunted Maze</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="full-width">
+        <p class="section-flag">Seasonal calendar</p>
+        <h2 class="section-title">What&rsquo;s open each month</h2>
+        <table class="price-table" style="margin-top:1rem;">
+          <thead>
+            <tr>
+              <th>Attraction</th>
+              <th>Apr</th>
+              <th>May</th>
+              <th>Jun</th>
+              <th>Jul</th>
+              <th>Aug</th>
+              <th>Sep</th>
+              <th>Oct</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Petting Zoo</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+            <tr><td>Flower Field</td><td> </td><td>●</td><td>●</td><td>●</td><td> </td><td> </td><td> </td></tr>
+            <tr><td>Apple Orchard</td><td> </td><td> </td><td> </td><td> </td><td>●</td><td>●</td><td>●</td></tr>
+            <tr><td>Pumpkin Patch</td><td> </td><td> </td><td> </td><td> </td><td> </td><td>●</td><td>●</td></tr>
+            <tr><td>Hay Maze</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td></tr>
+            <tr><td>Haunted Maze</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td><td>●</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <p class="small-note">HollowCreek Farm · Rexburg, Idaho</p>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="attractions.html">Attractions</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="visit.html">Visit</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+      <div class="social-row">
+        <a class="social-link" href="#">In</a>
+        <a class="social-link" href="#">Fb</a>
+      </div>
+    </footer>
   </div>
-
-  <div class="cta-band">
-    <h2>Ready to plan your visit?</h2>
-    <p>Grab a $20 all inclusive pass and experience everything the farm has to offer.</p>
-    <div class="cta-btns">
-      <a href="pricing.html"><button class="btn-primary">Get an all inclusive pass — $20</button></a>
-      <a href="pricing.html"><button class="btn-secondary">See all pricing</button></a>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-logo"><span>Hollow</span>Creek Farm · Chattanooga, TN</div>
-    <div class="footer-links">
-      <a href="attractions.html">Attractions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="visit.html">Plan your visit</a>
-      <a href="about.html">About us</a>
-    </div>
-  </footer>
-
-</div>
-<script>
-const seasons = [
-  { id:'spring', label:'Spring', color:'#D4537E', months:'April – May', attrs:[
-    { name:'Flower field', img:'images/sunflowers.jpg', imgBg:'#FBEAF0', imgColor:'#D4537E', open:true, desc:'Walk two acres of sunflowers, lavender, zinnias, and dahlias and cut your own bouquet. Clippers and wrap provided.', details:['2 acres of u-pick blooms','Clippers + wrap included','Peak bloom Apr – late May'], price:'$12 per bouquet · Free with all inclusive pass' },
-    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' }
-  ]},
-  { id:'summer', label:'Summer', color:'#639922', months:'June – August', attrs:[
-    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'Meet goats, sheep, and rabbits up close in our one-acre shaded petting area. Hand-washing stations at the exit.', details:['1 acre shaded enclosure','Open spring through fall','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
-    { name:'Apple orchard', img:'images/apple-orchard.jpg', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:true, desc:'Pick your own apples from three acres of orchard rows. Early summer varieties from late July, fall varieties through October.', details:['3 acres pick-your-own','Early varieties from late July','Wagon access through orchard'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
-  ]},
-  { id:'fall', label:'Fall', color:'#EF9F27', months:'September – October', attrs:[
-    { name:'Pumpkin patch', img:'images/pumpkins.jpg', imgBg:'#FAEEDA', imgColor:'#BA7517', open:false, desc:'Three acres of pumpkins in every shape and size, ready to self-harvest from the vine. Wheelbarrow stations at each row.', details:['3 acres of pumpkins','Mini, medium + large varieties','Self-harvest from the vine'], price:'Mini $8 · Medium $14 · Large $20 · Free with all inclusive pass' },
-    { name:'Hay maze', img:'images/hay-maze.jpg', imgBg:'#F1EFE8', imgColor:'#5F5E5A', open:false, desc:'Five acres of hay bale corridors with a family-friendly path and a longer challenge route. Direct access from the parking lot.', details:['5 acres · two difficulty routes','Direct parking lot access','Fall season only'], price:'$10 per person · Free with all inclusive pass' },
-    { name:'Petting zoo', img:'images/petting-zoo.jpg', imgBg:'#E1F5EE', imgColor:'#1D9E75', open:true, desc:'The petting zoo stays open through October. Same great animals, set against the colors of the season.', details:['Open through end of October','Hand washing at exit'], price:'$5 per person · Free with all inclusive pass' },
-    { name:'Apple orchard', img:'images/apple-orchard.jpg', imgBg:'#EAF3DE', imgColor:'#3B6D11', open:false, desc:'Fall varieties come in through October. The orchard rows are one of the most scenic spots on the farm in autumn.', details:['Fall varieties through October','Scenic fall foliage rows'], price:'$10 half-peck · $18 full peck · Free with all inclusive pass' }
-  ]}
-];
-
-function buildCard(a){
-  return `<div class="attr-card">
-    <div class="attr-img"><img src="${a.img||'images/placeholder.jpg'}" alt="${a.name}"></div>
-    <div class="attr-body">
-      <div class="attr-top"><div class="attr-name">${a.name}</div><span class="${a.open?'badge badge-open':'badge badge-soon'}">${a.open?'Open now':'Opens in fall'}</span></div>
-      <p class="attr-desc">${a.desc}</p>
-      ${a.details.map(d=>`<div class="attr-detail"><i class="ti ti-check" style="color:var(--accent-800);font-size:13px;flex-shrink:0;"></i><span>${d}</span></div>`).join('')}
-      <div class="attr-price"><i class="ti ti-ticket" style="font-size:12px;vertical-align:-1px;margin-right:4px;"></i>${a.price}</div>
-    </div>
-  </div>`;
-}
-
-function buildSection(s){
-  return `<div class="section season-${s.id}" style="padding:2rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.08);">
-    <div class="sec-head"><div class="sec-dot" style="background:${s.color};"></div><h2 style="font-size:18px;font-weight:500;">${s.label} attractions</h2><span style="font-size:12px;color:var(--text-muted);margin-left:4px;">${s.months}</span></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">${s.attrs.map(buildCard).join('')}</div>
-  </div>`;
-}
-
-function filter(season, btn){
-  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  const filtered = season==='all' ? seasons : seasons.filter(s=>s.id===season);
-  document.getElementById('attr-container').innerHTML = filtered.map(buildSection).join('');
-}
-filter('all', document.querySelector('.stab.active'));
-</script>
+  <script src="season.js"></script>
+  <script src="updates.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

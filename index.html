@@ -1,169 +1,186 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hollow Creek Farm — Chattanooga, TN</title>
+  <title>HollowCreek Farm | Rexburg, Idaho</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css">
 </head>
 <body>
-<div class="page season-summer">
+  <div class="page-shell">
+    <header class="site-nav">
+      <a class="brand" href="index.html"><span>Hollow</span>Creek Farm</a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
+        <span class="bar"></span>
+      </button>
+      <nav class="nav-panel">
+        <a href="index.html" class="active">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="visit.html">Plan Your Visit</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="attractions.html">Attractions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="visit.html">Visit</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="nav-cta" href="pricing.html">Buy Tickets</a>
+    </header>
 
-  <nav class="nav">
-    <div class="nav-logo"><span>Hollow</span>Creek Farm</div>
-    <div class="nav-links">
-      <a href="attractions.html">Attractions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="visit.html">Plan your visit</a>
-      <a href="about.html">About us</a>
-    </div>
-    <a href="pricing.html"><button class="nav-cta">Buy tickets</button></a>
-  </nav>
-
-  <!-- Hero -->
-  <div class="page-hero" style="padding:3.5rem 1.5rem 2.5rem;">
-    <div class="eyebrow" style="display:inline-flex;align-items:center;gap:6px;background:var(--accent-100);color:var(--accent-800);padding:4px 12px;border-radius:20px;margin-bottom:1.25rem;">
-      <i class="ti ti-sun" style="font-size:13px;"></i> Now open — summer season
-    </div>
-    <h1 style="font-size:32px;color:var(--accent-900);margin-bottom:1rem;">A real working farm, just outside Chattanooga</h1>
-    <p style="color:var(--accent-800);margin:0 0 1.75rem;">Pick flowers, meet the animals, wander the orchard, and get lost in the maze. Something new every season, April through October.</p>
-    <div class="cta-btns" style="margin-bottom:2.5rem;">
-      <a href="pricing.html"><button class="btn-primary">Get your $20 all inclusive pass</button></a>
-      <a href="attractions.html"><button class="btn-secondary">See what's open now</button></a>
-    </div>
-    <div style="display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;padding-top:2rem;border-top:0.5px solid var(--accent-600);">
-      <div style="text-align:center;"><div style="font-size:22px;font-weight:500;color:var(--accent-900);">17 acres</div><div style="font-size:11px;color:var(--accent-800);margin-top:2px;">of farm experiences</div></div>
-      <div style="text-align:center;"><div style="font-size:22px;font-weight:500;color:var(--accent-900);">6 attractions</div><div style="font-size:11px;color:var(--accent-800);margin-top:2px;">across the seasons</div></div>
-      <div style="text-align:center;"><div style="font-size:22px;font-weight:500;color:var(--accent-900);">Apr – Oct</div><div style="font-size:11px;color:var(--accent-800);margin-top:2px;">open season</div></div>
-      <div style="text-align:center;"><div style="font-size:22px;font-weight:500;color:var(--accent-900);">$20</div><div style="font-size:11px;color:var(--accent-800);margin-top:2px;">all inclusive pass</div></div>
-    </div>
-  </div>
-
-  <!-- Nav cards -->
-  <div class="section">
-    <div class="eyebrow">Explore the farm</div>
-    <h2 style="margin-bottom:1.5rem;">Everything you need, in one place</h2>
-    <div class="grid-3">
-      <a href="attractions.html" style="display:block;">
-        <div class="card" style="cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1F5A37'" onmouseout="this.style.borderColor=''">
-          <div style="font-size:24px;color:var(--accent-800);margin-bottom:1rem;"><i class="ti ti-flower"></i></div>
-          <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;">Attractions</div>
-          <div style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;">Petting zoo, flower field, apple orchard, pumpkin patch, hay maze, and wagon rides — see what's open each season.</div>
-          <div style="font-size:12px;color:var(--accent-800);font-weight:500;display:flex;align-items:center;gap:4px;"><i class="ti ti-arrow-right" style="font-size:13px;"></i>View all attractions</div>
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge" id="hero-badge">Seasonal opening</span>
+        <h1 class="hero-title" id="hero-title">Welcome to HollowCreek Farm</h1>
+        <p class="hero-copy" id="hero-copy">A seasonal family experience rooted in real farm life and wildflower fields outside Rexburg.</p>
+        <div class="hero-actions cta-btns">
+          <a class="button" href="pricing.html">Reserve a day pass</a>
+          <a class="button secondary" href="visit.html">Plan your visit</a>
         </div>
-      </a>
-      <a href="pricing.html" style="display:block;">
-        <div class="card" style="cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1F5A37'" onmouseout="this.style.borderColor=''">
-          <div style="font-size:24px;color:var(--accent-800);margin-bottom:1rem;"><i class="ti ti-ticket"></i></div>
-          <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;">Pricing</div>
-          <div style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;">Walk the grounds free. $20 all-inclusive day pass. Individual attraction rates and season passes for families.</div>
-          <div style="font-size:12px;color:var(--accent-800);font-weight:500;display:flex;align-items:center;gap:4px;"><i class="ti ti-arrow-right" style="font-size:13px;"></i>See all pricing</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="full-width highlight-card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+          <div>
+            <h2>What&rsquo;s Happening Now</h2>
+            <p class="section-copy">A quick snapshot of this weekend&rsquo;s best family moments at HollowCreek.</p>
+          </div>
+          <p class="small-note" id="highlight-updated">Updated this week</p>
         </div>
-      </a>
-      <a href="about.html" style="display:block;">
-        <div class="card" style="cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='#1F5A37'" onmouseout="this.style.borderColor=''">
-          <div style="font-size:24px;color:var(--accent-800);margin-bottom:1rem;"><i class="ti ti-tractor"></i></div>
-          <div style="font-size:14px;font-weight:500;color:var(--text);margin-bottom:6px;">About us</div>
-          <div style="font-size:12px;color:var(--text-muted);line-height:1.6;margin-bottom:1rem;">A real working livestock operation that opened its gates. Learn our story, our animals, and why we built this for families.</div>
-          <div style="font-size:12px;color:var(--accent-800);font-weight:500;display:flex;align-items:center;gap:4px;"><i class="ti ti-arrow-right" style="font-size:13px;"></i>Our story</div>
+        <div class="highlight-list" id="highlight-list">
+          <div class="highlight-item">
+            <strong>Loading this weekend&rsquo;s highlights...</strong>
+          </div>
         </div>
-      </a>
-    </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <p class="section-flag">Attractions overview</p>
+          <h2 class="section-title">Six authentic farm experiences</h2>
+        </div>
+        <p class="small-copy">From waking baby animals to autumn harvest paths, each attraction is designed for a genuine family farm day.</p>
+      </div>
+      <div class="card-grid" style="margin-top:1rem;">
+        <div class="card">
+          <h3>Petting Zoo</h3>
+          <p class="section-copy">Meet goats, sheep, rabbits, and friendly livestock in a shaded pens area that feels warm and calm.</p>
+        </div>
+        <div class="card">
+          <h3>Flower Field</h3>
+          <p class="section-copy">U-pick blooms, gentle meadow paths, and a bright seasonal scene from April through July.</p>
+        </div>
+        <div class="card">
+          <h3>Apple Orchard</h3>
+          <p class="section-copy">August to October harvests let families pick crisp apples straight from the tree.</p>
+        </div>
+        <div class="card">
+          <h3>Pumpkin Patch</h3>
+          <p class="section-copy">A wide field of pumpkins, gourds, and fall textures for a classic Idaho autumn day.</p>
+        </div>
+        <div class="card">
+          <h3>Hay Maze</h3>
+          <p class="section-copy">Navigate the maze route on fresh hay paths made for exploring with kids.</p>
+        </div>
+        <div class="card">
+          <h3>Haunted Maze</h3>
+          <p class="section-copy">October-only evenings with a gently spooky walk for older kids and families.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <p class="section-flag">Pricing snapshot</p>
+          <h2 class="section-title">Simple, confident pricing</h2>
+        </div>
+        <p class="small-copy">Choose the pace that fits your family: free grounds access, a day of full access, or membership-style season passes.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <span class="section-flag">Roam Free</span>
+          <p class="price">Free</p>
+          <p>Enjoy the farm entry, picnic areas, and photo spots with no ticket needed.</p>
+        </div>
+        <div class="pricing-card">
+          <span class="section-flag">Day Pass</span>
+          <p class="price">$20</p>
+          <p>One all-inclusive day for every daytime attraction, fields, and wagon tours.</p>
+        </div>
+        <div class="pricing-card">
+          <span class="section-flag">Season Pass</span>
+          <p class="price">From $75</p>
+          <p>Become a farm member for the season, visit again and again, and make HollowCreek part of your family story.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <p class="section-flag">Visitor stories</p>
+          <h2 class="section-title">What families are saying</h2>
+        </div>
+      </div>
+      <div class="testimonial-card" style="margin-top:1rem;">
+        <blockquote id="testimonial-quote">Loading visitor stories...</blockquote>
+        <div class="testimonial-author" id="testimonial-author"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <p class="section-flag">Stay in touch</p>
+          <h2 class="section-title">Email signup</h2>
+        </div>
+        <p class="small-copy">Get seasonal opening notes, weekend updates, and family farm news.</p>
+      </div>
+      <div class="form-card" style="margin-top:1rem;">
+        <form>
+          <div class="form-row">
+            <label for="first-name">First name</label>
+            <input id="first-name" name="first-name" type="text" placeholder="First name">
+          </div>
+          <div class="form-row" style="margin-top:1rem;">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+          </div>
+          <div class="cta-btns" style="margin-top:1.25rem;">
+            <button class="form-submit" type="submit">Join farm news</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <div>
+          <p class="small-note">HollowCreek Farm · Rexburg, Idaho</p>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="attractions.html">Attractions</a>
+          <a href="pricing.html">Pricing</a>
+          <a href="visit.html">Visit</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+      <div class="social-row">
+        <a class="social-link" href="#">In</a>
+        <a class="social-link" href="#">Fb</a>
+      </div>
+    </footer>
   </div>
-
-  <!-- Attractions preview -->
-  <div class="section alt">
-    <div class="eyebrow">Attractions</div>
-    <h2>What's on the farm</h2>
-    <p class="sub">Walk the grounds free. Grab a $20 all inclusive pass for everything.</p>
-    <div class="filter-bar" style="padding:0;margin-bottom:1.25rem;border:none;">
-      <div class="stabs">
-        <button class="stab active" onclick="filterHome('all',this)">All seasons</button>
-        <button class="stab" onclick="filterHome('spring',this)">Spring</button>
-        <button class="stab" onclick="filterHome('summer',this)">Summer</button>
-        <button class="stab" onclick="filterHome('fall',this)">Fall</button>
-      </div>
-    </div>
-    <div class="grid-6" id="home-attr"></div>
-  </div>
-
-  <!-- Plan your visit strip -->
-  <div class="section">
-    <div class="eyebrow">Plan your visit</div>
-    <h2 style="margin-bottom:1.5rem;">Everything you need to know</h2>
-    <div class="grid-4" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr));">
-      <div style="background:var(--bg-subtle);border-radius:var(--radius-lg);padding:1rem;">
-        <div style="font-size:18px;color:var(--accent-800);margin-bottom:8px;"><i class="ti ti-map-pin"></i></div>
-        <div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px;">Location</div>
-        <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">Near Chattanooga, TN<br>Free gravel parking<br>150+ spaces on site</div>
-      </div>
-      <div style="background:var(--bg-subtle);border-radius:var(--radius-lg);padding:1rem;">
-        <div style="font-size:18px;color:var(--accent-800);margin-bottom:8px;"><i class="ti ti-clock"></i></div>
-        <div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px;">Hours</div>
-        <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">Sat–Sun 9am–6pm<br>Oct weekdays 10am–5pm<br>Open Apr through Oct</div>
-      </div>
-      <div style="background:var(--bg-subtle);border-radius:var(--radius-lg);padding:1rem;">
-        <div style="font-size:18px;color:var(--accent-800);margin-bottom:8px;"><i class="ti ti-tractor"></i></div>
-        <div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px;">Wagon rides</div>
-        <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">Departs every 15 min<br>Full farm loop<br>Included with all inclusive pass</div>
-      </div>
-      <div style="background:var(--bg-subtle);border-radius:var(--radius-lg);padding:1rem;">
-        <div style="font-size:18px;color:var(--accent-800);margin-bottom:8px;"><i class="ti ti-ban"></i></div>
-        <div style="font-size:12px;font-weight:500;color:var(--text);margin-bottom:4px;">Good to know</div>
-        <div style="font-size:11px;color:var(--text-muted);line-height:1.6;">No pets on property<br>Food + drink on site<br>ADA-accessible hub</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Email signup -->
-  <div class="email-band">
-    <h2>Be the first to know</h2>
-    <p>Opening dates, new attractions, and early-bird season pass deals — straight to your inbox.</p>
-    <div class="email-form">
-      <input type="email" placeholder="your@email.com">
-      <button>Sign me up</button>
-    </div>
-  </div>
-
-  <footer class="footer">
-    <div class="footer-logo"><span>Hollow</span>Creek Farm · Chattanooga, TN</div>
-    <div class="footer-links">
-      <a href="attractions.html">Attractions</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="visit.html">Plan your visit</a>
-      <a href="about.html">About us</a>
-    </div>
-    <div class="footer-social">
-      <a href="#"><i class="ti ti-brand-instagram"></i></a>
-      <a href="#"><i class="ti ti-brand-facebook"></i></a>
-    </div>
-  </footer>
-
-</div>
-<script>
-const attrs = [
-  {name:'Petting zoo',img:'images/petting-zoo.jpg',seasons:['spring','summer','fall'],open:true},
-  {name:'Flower field',img:'images/sunflowers.jpg',seasons:['spring','summer'],open:true},
-  {name:'Apple orchard',img:'images/apple-orchard.jpg',seasons:['summer','fall'],open:true},
-  {name:'Pumpkin patch',img:'images/pumpkins.jpg',seasons:['fall'],open:false},
-  {name:'Hay maze',img:'images/hay-maze.jpg',seasons:['fall'],open:false},
-  {name:'Wagon rides',img:'images/tulips.jpg',seasons:['spring','summer','fall'],open:true},
-];
-function filterHome(s,btn){
-  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
-  btn.classList.add('active');
-  const f=s==='all'?attrs:attrs.filter(a=>a.seasons.includes(s));
-  document.getElementById('home-attr').innerHTML=f.map(a=>`
-    <div style="background:var(--bg);border:0.5px solid rgba(0,0,0,0.1);border-radius:12px;overflow:hidden;">
-      <div class="home-attr-media"><img src="${a.img}" alt="${a.name}"></div>
-      <div style="padding:0.85rem;">
-        <div style="font-size:13px;font-weight:500;color:var(--text);margin-bottom:6px;">${a.name}</div>
-        <span style="font-size:10px;padding:2px 7px;border-radius:10px;${a.open?'background:var(--accent-50);color:var(--accent-800)':'background:var(--amber-50);color:var(--amber-800)'}">${a.open?'Open now':'Opens in fall'}</span>
-      </div>
-    </div>`).join('');
-}
-filterHome('all',document.querySelector('.stab.active'));
-</script>
+  <script src="season.js"></script>
+  <script src="updates.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
