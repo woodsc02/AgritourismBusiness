@@ -14,7 +14,7 @@
     .attr-name { font-size:13px; font-weight:500; color:var(--text); }
     .attr-desc { font-size:12px; color:var(--text-muted); line-height:1.6; margin-bottom:10px; }
     .attr-detail { display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-muted); margin-bottom:4px; }
-    .attr-price { font-size:12px; font-weight:500; color:#3B6D11; margin-top:8px; padding-top:8px; border-top:0.5px solid rgba(0,0,0,0.08); }
+    .attr-price { font-size:12px; font-weight:500; color:var(--accent-800); margin-top:8px; padding-top:8px; border-top:0.5px solid rgba(0,0,0,0.08); }
     .sec-head  { display:flex; align-items:center; gap:10px; margin-bottom:1.25rem; }
     .sec-dot   { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
   </style>
@@ -41,10 +41,10 @@
     <div class="eyebrow">Attractions</div>
     <h1>Something new every season</h1>
     <p>From the first flowers of spring to the last pumpkins of fall — six experiences across seven months, all on one working farm just outside Chattanooga.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0.5px solid #97C459;border-radius:12px;overflow:hidden;margin:1.5rem 0 0;">
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid #97C459;text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#D4537E;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:#173404;">Spring</div><div style="font-size:11px;color:#3B6D11;">Apr – May</div></div>
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid #97C459;text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#639922;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:#173404;">Summer</div><div style="font-size:11px;color:#3B6D11;">Jun – Aug</div></div>
-      <div style="padding:1rem;background:rgba(255,255,255,0.45);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#EF9F27;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:#173404;">Fall</div><div style="font-size:11px;color:#3B6D11;">Sep – Oct</div></div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:0.5px solid var(--accent-600);border-radius:12px;overflow:hidden;margin:1.5rem 0 0;">
+      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid var(--accent-600);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#D4537E;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Spring</div><div style="font-size:11px;color:var(--accent-800);">Apr – May</div></div>
+      <div style="padding:1rem;background:rgba(255,255,255,0.45);border-right:0.5px solid var(--accent-600);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#639922;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Summer</div><div style="font-size:11px;color:var(--accent-800);">Jun – Aug</div></div>
+      <div style="padding:1rem;background:rgba(255,255,255,0.45);text-align:center;"><div style="width:10px;height:10px;border-radius:50%;background:#EF9F27;margin:0 auto 6px;"></div><div style="font-size:12px;font-weight:500;color:var(--accent-900);">Fall</div><div style="font-size:11px;color:var(--accent-800);">Sep – Oct</div></div>
     </div>
   </div>
 
@@ -61,19 +61,19 @@
   <div id="attr-container"></div>
 
   <!-- Wagon section -->
-  <div style="background:#EAF3DE;padding:2.5rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.1);">
+  <div style="background:var(--accent-50);padding:2.5rem 2rem;border-bottom:0.5px solid rgba(0,0,0,0.1);">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
       <div>
         <div class="eyebrow">Wagon rides</div>
-        <h2 style="font-size:20px;font-weight:500;color:#173404;margin-bottom:0.75rem;">The best way to see the whole farm</h2>
-        <p style="font-size:13px;color:#3B6D11;line-height:1.8;">Our tractor-pulled wagon loops the entire property every 15 minutes, stopping near each attraction. Hop on, hop off, or ride the full loop — included free with every all inclusive pass and season pass.</p>
+        <h2 style="font-size:20px;font-weight:500;color:var(--accent-900);margin-bottom:0.75rem;">The best way to see the whole farm</h2>
+        <p style="font-size:13px;color:var(--accent-800);line-height:1.8;">Our tractor-pulled wagon loops the entire property every 15 minutes, stopping near each attraction. Hop on, hop off, or ride the full loop — included free with every all inclusive pass and season pass.</p>
       </div>
       <div style="background:rgba(255,255,255,0.5);border:0.5px solid #97C459;border-radius:12px;padding:1.25rem;">
-        <div style="font-size:12px;font-weight:500;color:#173404;margin-bottom:10px;"><i class="ti ti-clock" style="font-size:13px;vertical-align:-1px;margin-right:5px;"></i>Sample departure times</div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">9:00 AM</span><span style="color:#3B6D11;">First departure</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">Every 15 min</span><span style="color:#3B6D11;">All day long</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(151,196,89,0.4);font-size:12px;"><span style="font-weight:500;color:#27500A;">5:45 PM</span><span style="color:#3B6D11;">Last departure</span></div>
-        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;"><span style="font-weight:500;color:#27500A;">$4 walk-up</span><span style="color:#3B6D11;">Free with all inclusive pass</span></div>
+        <div style="font-size:12px;font-weight:500;color:var(--accent-900);margin-bottom:10px;"><i class="ti ti-clock" style="font-size:13px;vertical-align:-1px;margin-right:5px;"></i>Sample departure times</div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">9:00 AM</span><span style="color:var(--accent-800);">First departure</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">Every 15 min</span><span style="color:var(--accent-800);">All day long</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:0.5px solid rgba(47,127,79,0.18);font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">5:45 PM</span><span style="color:var(--accent-800);">Last departure</span></div>
+        <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px;"><span style="font-weight:500;color:var(--accent-800);">$4 walk-up</span><span style="color:var(--accent-800);">Free with all inclusive pass</span></div>
       </div>
     </div>
   </div>
@@ -122,7 +122,7 @@ function buildCard(a){
     <div class="attr-body">
       <div class="attr-top"><div class="attr-name">${a.name}</div><span class="${a.open?'badge badge-open':'badge badge-soon'}">${a.open?'Open now':'Opens in fall'}</span></div>
       <p class="attr-desc">${a.desc}</p>
-      ${a.details.map(d=>`<div class="attr-detail"><i class="ti ti-check" style="color:#3B6D11;font-size:13px;flex-shrink:0;"></i><span>${d}</span></div>`).join('')}
+      ${a.details.map(d=>`<div class="attr-detail"><i class="ti ti-check" style="color:var(--accent-800);font-size:13px;flex-shrink:0;"></i><span>${d}</span></div>`).join('')}
       <div class="attr-price"><i class="ti ti-ticket" style="font-size:12px;vertical-align:-1px;margin-right:4px;"></i>${a.price}</div>
     </div>
   </div>`;
