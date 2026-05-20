@@ -10,9 +10,7 @@
   <div class="page-shell">
     <header class="site-nav">
       <a class="brand" href="index.html"><span>Hollow</span>Creek Farm</a>
-      <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation">
-        <span class="bar"></span>
-      </button>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Open navigation"><span class="bar"></span></button>
       <nav class="nav-panel">
         <a href="index.html">Home</a>
         <a href="attractions.html">Attractions</a>
@@ -35,99 +33,126 @@
     <section class="hero">
       <div class="hero-content">
         <span class="hero-badge">Plan Your Visit</span>
-        <h1 class="hero-title">Everything you need before you arrive</h1>
-        <p class="hero-copy">Hours, location, what to bring, and group info in one place for a calm, confident farm day.</p>
+        <h1 class="hero-title fade-up">Everything you need before you arrive</h1>
+        <p class="hero-copy fade-up delay-1">Hours, location, and what to bring are all here for a calm, confident farm day.</p>
       </div>
     </section>
 
     <section class="section">
+      <div class="section-intro">
+        <div>
+          <p class="section-flag">Season guide</p>
+          <h2 class="section-title">What to expect each season</h2>
+        </div>
+        <p class="section-copy">Plan your visit around the rhythms of spring, summer, and fall so every trip feels effortless.</p>
+      </div>
       <div class="lead-grid">
-        <div class="plan-card">
+        <article class="plan-card">
           <h3>Spring</h3>
-          <p>Weekends only, perfect for blooming fields and baby animals.</p>
-        </div>
-        <div class="plan-card">
+          <p>Weekends only, with blooming fields and baby animals leading the season.</p>
+        </article>
+        <article class="plan-card">
           <h3>Summer</h3>
-          <p>Thursday through Sunday, with the full farm experience open.</p>
-        </div>
-        <div class="plan-card">
+          <p>Thursday through Sunday, with the full farm experience open for families.</p>
+        </article>
+        <article class="plan-card">
           <h3>Fall</h3>
           <p>Daily farm access and October evenings with the haunted maze.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-intro">
+        <div>
+          <p class="section-flag">Location</p>
+          <h2 class="section-title">Find us in Rexburg, Idaho</h2>
         </div>
+        <p class="section-copy">HollowCreek Farm is a working livestock farmstead just minutes from downtown Rexburg.</p>
       </div>
+      <article class="map-card">Placeholder map embed</article>
     </section>
 
     <section class="section">
-      <div class="full-width">
-        <p class="section-flag">Location</p>
-        <h2 class="section-title">Find us in Rexburg, Idaho</h2>
-        <p class="section-copy">HollowCreek Farm is a working livestock farmstead just minutes from downtown Rexburg, with ample parking and a relaxed arrival experience.</p>
+      <div class="section-intro">
+        <div>
+          <p class="section-flag">What to bring</p>
+          <h2 class="section-title">Comfort first</h2>
+        </div>
+        <p class="section-copy">Pack closed-toe shoes, weather layers, and a small bag for pumpkins or flowers.</p>
       </div>
-      <div class="map-card" style="margin-top:1rem;">Placeholder map embed</div>
-    </section>
-
-    <section class="section">
       <div class="detail-grid">
-        <div class="detail-card">
-          <div class="section-flag">What to bring</div>
+        <article class="detail-card">
+          <span class="section-flag">What to bring</span>
           <h3>Comfort and practicality</h3>
-          <p>Closed-toe shoes, a light jacket, sunscreen, and a small bag for pumpkins or picked flowers.</p>
-        </div>
-        <div class="detail-card">
-          <div class="section-flag">What to expect</div>
+          <p>Closed-toe shoes, a light jacket, sunscreen, and a small bag for farm finds.</p>
+        </article>
+        <article class="detail-card">
+          <span class="section-flag">What to expect</span>
           <h3>Real farm rhythms</h3>
-          <p>This is a working farm. Expect gentle livestock noises, natural paths, and a calm seasonal pace.</p>
-        </div>
-        <div class="detail-card">
-          <div class="section-flag">Accessibility</div>
+          <p>Expect natural sounds, gentle livestock activity, and a relaxed pace.</p>
+        </article>
+        <article class="detail-card">
+          <span class="section-flag">Accessibility</span>
           <h3>Careful farm access</h3>
-          <p>Main areas are accessible. Ask staff at arrival for the best route if mobility is a concern.</p>
-        </div>
+          <p>Main areas are accessible. Ask staff at arrival for the best route.</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
-      <div class="full-width">
-        <p class="section-flag">Group visits</p>
-        <h2 class="section-title">Bring a group</h2>
-        <p class="section-copy">Whether it&rsquo;s a family reunion or a youth group, we help plan visits that keep everyone together and energized.</p>
+      <div class="section-intro">
+        <div>
+          <p class="section-flag">Group planning</p>
+          <h2 class="section-title">Bring your group together</h2>
+        </div>
+        <p class="section-copy">Family reunions, school groups, and clubs are all welcome with thoughtful planning.</p>
       </div>
-      <div class="form-card" style="margin-top:1rem;">
+      <article class="form-card">
         <form>
           <div class="form-row">
             <label for="group-name">Group name</label>
             <input id="group-name" type="text" placeholder="Family, club, or school name">
           </div>
-          <div class="form-row" style="margin-top:1rem;">
+          <div class="form-row">
             <label for="group-people">Group size</label>
             <input id="group-people" type="text" placeholder="Estimated number of people">
           </div>
-          <div class="form-row" style="margin-top:1rem;">
+          <div class="form-row">
             <label for="requested-date">Preferred date</label>
             <input id="requested-date" type="text" placeholder="e.g. October weekend">
           </div>
-          <div class="cta-btns" style="margin-top:1.25rem;">
-            <button class="form-submit" type="submit">Request group visit</button>
+          <div class="hero-actions">
+            <button class="button primary form-submit" type="submit">Request group visit</button>
           </div>
         </form>
-      </div>
+      </article>
     </section>
 
     <footer class="footer">
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;">
-        <p class="small-note">HollowCreek Farm · Rexburg, Idaho</p>
-        <div class="footer-links">
-          <a href="index.html">Home</a>
-          <a href="attractions.html">Attractions</a>
-          <a href="pricing.html">Pricing</a>
-          <a href="farm-store.html">Farm Store</a>
-          <a href="visit.html">Visit</a>
-          <a href="about.html">About</a>
+      <div class="footer-grid">
+        <div>
+          <h3>HollowCreek Farm</h3>
+          <p>Everything you need to feel prepared for a relaxed Idaho farm day.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="attractions.html">Attractions</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="farm-store.html">Farm Store</a>
+            <a href="visit.html">Visit</a>
+            <a href="about.html">About</a>
+          </div>
         </div>
       </div>
-      <div class="social-row">
-        <a class="social-link" href="#">In</a>
-        <a class="social-link" href="#">Fb</a>
+      <div class="footer-legal">
+        <span>© 2026 HollowCreek Farm</span>
+        <div class="social-row">
+          <a class="social-link" href="#">In</a>
+          <a class="social-link" href="#">Fb</a>
+        </div>
       </div>
     </footer>
   </div>
