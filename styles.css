@@ -311,8 +311,58 @@ body {
   padding: 1.6rem;
 }
 
-.card {
+.card,
+.store-card {
   padding: 1.3rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: var(--border);
+  display: grid;
+  gap: 0.85rem;
+}
+
+.store-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.store-card .price-list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.1rem;
+  color: var(--gray-700);
+}
+
+.store-card .availability-note {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.note-box {
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(245, 236, 217, 0.75);
+  border: 1px solid rgba(150, 102, 30, 0.16);
+  color: #5B3F18;
+}
+
+.order-options {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1rem;
+}
+
+.order-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.order-options input {
+  width: 1rem;
+  height: 1rem;
 }
 
 .card strong,
@@ -334,7 +384,8 @@ body {
 }
 
 .detail-grid,
-.visit-grid {
+.visit-grid,
+.store-grid {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
