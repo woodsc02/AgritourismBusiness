@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hollow Creek Farm — Season Control</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: #eef0ea;
+      color: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .admin-shell {
+      width: min(100%, 760px);
+      background: #ffffff;
+      border-radius: 26px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.12);
+      padding: 2rem;
+    }
+    h1 {
+      margin: 0 0 0.75rem;
+      font-size: 2rem;
+      letter-spacing: -0.03em;
+    }
+    p.lead {
+      margin: 0 0 1.75rem;
+      color: #505050;
+      line-height: 1.7;
+    }
+    .panel {
+      display: grid;
+      gap: 1rem;
+    }
+    .password-card,
+    .dashboard-card {
+      background: #f7f7f5;
+      border: 1px solid #dcd8d1;
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+    label,
+    .button,
+    .note {
+      font-size: 0.97rem;
+    }
+    input[type="password"] {
+      width: 100%;
+      padding: 0.95rem 1rem;
+      border-radius: 14px;
+      border: 1px solid #c9c5bc;
+      font-size: 1rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.95rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: #3e5c45;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 180ms ease, background-color 180ms ease;
+    }
+    .button:hover {
+      transform: translateY(-1px);
+      background: #2f4a36;
+    }
+    .season-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin: 0;
+    }
+    .season-button {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1rem;
+      border-radius: 18px;
+      border: 1px solid #c9c5bc;
+      background: #ffffff;
+      cursor: pointer;
+      transition: border-color 180ms ease, background-color 180ms ease;
+      text-align: left;
+    }
+    .season-button.active {
+      border-color: #3e5c45;
+      background: #eef4ea;
+    }
+    .season-label {
+      display: grid;
+      gap: 0.35rem;
+    }
+    .season-emoji {
+      font-size: 1.9rem;
+    }
+    .swatch-row {
+      display: flex;
+      gap: 0.35rem;
+    }
+    .swatch {
+      width: 18px;
+      height: 18px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .status {
+      padding: 1rem 1rem;
+      border-radius: 16px;
+      background: #eef3e8;
+      border: 1px solid #d9e2cd;
+      color: #2f4a35;
+    }
+    .note {
+      margin: 0;
+      color: #5c5c5c;
+      line-height: 1.7;
+    }
+    .hidden {
+      display: none;
+    }
+    .error {
+      color: #9a2c2b;
+    }
+  </style>
+  <script src="seasons.js"></script>
+  <script>
+    var ADMIN_PASSWORD = 'HCFarm2025';
+    var SESSION_KEY = 'hcf_admin_authenticated';
+    var activeSeason = localStorage.getItem('hcf_active_season') || 'fall';
+    function getSelectedSeason() {
+      return document.querySelector('.season-button.active')?.dataset.season || activeSeason;
+    }
+    function setActiveSeason(season) {
+      activeSeason = season;
+      localStorage.setItem('hcf_active_season', season);
+      updateSelection();
+      document.getElementById('status-message').textContent = 'Active season set to ' + window.SEASONS[season].label + ' ' + window.SEASONS[season].emoji + '.';
+      document.getElementById('status-panel').classList.remove('hidden');
+    }
+    function updateSelection() {
+      document.querySelectorAll('.season-button').forEach(function(button) {
+        button.classList.toggle('active', button.dataset.season === activeSeason);
+      });
+      document.getElementById('current-season-label').textContent = window.SEASONS[activeSeason].label;
+    }
+    function showAdminPanel() {
+      document.getElementById('login-panel').classList.add('hidden');
+      document.getElementById('admin-panel').classList.remove('hidden');
+      updateSelection();
+    }
+    function onLoginSubmit(event) {
+      event.preventDefault();
+      var pass = document.getElementById('admin-password').value.trim();
+      if (pass === ADMIN_PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        showAdminPanel();
+      } else {
+        document.getElementById('login-error').textContent = 'Incorrect password. Please try again.';
+      }
+    }
+    function initAdmin() {
+      var loginForm = document.getElementById('login-form');
+      loginForm.addEventListener('submit', onLoginSubmit);
+      document.querySelectorAll('.season-button').forEach(function(button) {
+        button.addEventListener('click', function() {
+          activeSeason = button.dataset.season;
+          updateSelection();
+        });
+      });
+      document.getElementById('save-button').addEventListener('click', function() {
+        setActiveSeason(getSelectedSeason());
+      });
+      if (sessionStorage.getItem(SESSION_KEY) === 'true') {
+        showAdminPanel();
+      }
+    }
+    window.addEventListener('DOMContentLoaded', initAdmin);
+  </script>
+</head>
+<body>
+  <main class="admin-shell">
+    <article class="admin-card">
+      <h1>Hollow Creek Farm — Season Control</h1>
+      <p class="lead">Use this page to set the active seasonal palette for your browser. The selected season persists locally and loads on every public page.</p>
+      <div class="panel">
+        <section id="login-panel" class="password-card">
+          <h2>Admin access</h2>
+          <form id="login-form">
+            <label for="admin-password">Password</label>
+            <input id="admin-password" type="password" autocomplete="current-password" placeholder="Enter password">
+            <p id="login-error" class="error" aria-live="polite"></p>
+            <button class="button" type="submit">Unlock dashboard</button>
+          </form>
+        </section>
+        <section id="admin-panel" class="dashboard-card hidden">
+          <div class="status" id="status-panel">
+            Active season: <strong id="current-season-label"></strong>
+          </div>
+          <div class="season-grid">
+            <button type="button" class="season-button" data-season="spring">
+              <span class="season-label"><span class="season-emoji">🌸</span><strong>Spring</strong></span>
+              <span class="swatch-row">
+                <span class="swatch" style="background:#A8C5A0"></span>
+                <span class="swatch" style="background:#F9C6C9"></span>
+                <span class="swatch" style="background:#F5E6A3"></span>
+              </span>
+            </button>
+            <button type="button" class="season-button" data-season="summer">
+              <span class="season-label"><span class="season-emoji">☀️</span><strong>Summer</strong></span>
+              <span class="swatch-row">
+                <span class="swatch" style="background:#E8A820"></span>
+                <span class="swatch" style="background:#6A9EC5"></span>
+                <span class="swatch" style="background:#F0C9A0"></span>
+              </span>
+            </button>
+            <button type="button" class="season-button" data-season="fall">
+              <span class="season-label"><span class="season-emoji">🎃</span><strong>Fall</strong></span>
+              <span class="swatch-row">
+                <span class="swatch" style="background:#6B7C5E"></span>
+                <span class="swatch" style="background:#C8622A"></span>
+                <span class="swatch" style="background:#D4874E"></span>
+              </span>
+            </button>
+            <button type="button" class="season-button" data-season="winter">
+              <span class="season-label"><span class="season-emoji">❄️</span><strong>Winter</strong></span>
+              <span class="swatch-row">
+                <span class="swatch" style="background:#3E5C45"></span>
+                <span class="swatch" style="background:#A63228"></span>
+                <span class="swatch" style="background:#B8CDD6"></span>
+              </span>
+            </button>
+          </div>
+          <button class="button" id="save-button" type="button">Set Active Season</button>
+          <p class="note">Changes apply immediately on this browser. Push to GitHub to deploy to production.</p>
+        </section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
