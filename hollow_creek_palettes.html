@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hollow Creek Farm — Seasonal Color Palettes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F5F0E6;
+    --dark: #2A2320;
+    --mid: #6B5744;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    min-height: 100vh;
+    padding: 0 0 80px;
+  }
+
+  /* HEADER */
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 22px 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: var(--dark);
+  }
+  .logo span { font-weight: 700; }
+  .header-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 500;
+  }
+
+  /* PAGE TITLE */
+  .page-title {
+    text-align: center;
+    padding: 56px 24px 40px;
+  }
+  .page-title .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+  .page-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--dark);
+    margin-bottom: 16px;
+  }
+  .page-title p {
+    font-size: 0.92rem;
+    color: #888;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* SEASON TABS */
+  .tab-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 24px 40px;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(0,0,0,0.15);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #777;
+  }
+  .tab-btn.active, .tab-btn:hover {
+    border-color: transparent;
+    color: #fff;
+  }
+
+  /* SEASON PANELS */
+  .season-panel {
+    display: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 28px;
+    animation: fadeUp 0.35s ease;
+  }
+  .season-panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* HERO PREVIEW CARD */
+  .hero-card {
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .hero-card-inner {
+    padding: 44px 44px 36px;
+    position: relative;
+  }
+  .hero-chip {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.22);
+    color: rgba(255,255,255,0.9);
+  }
+  .hero-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: #fff;
+    margin-bottom: 14px;
+    max-width: 560px;
+  }
+  .hero-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 400px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+  .hero-cta {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    padding: 12px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .hero-cta:hover { transform: translateY(-2px); opacity: 0.9; }
+
+  /* COLOR GRID */
+  .palette-section-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #aaa;
+    font-weight: 600;
+    margin-bottom: 18px;
+  }
+
+  .palette-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  .swatch-card {
+    border-radius: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.18s, box-shadow 0.18s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #fff;
+  }
+  .swatch-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+  }
+  .swatch-top {
+    height: 90px;
+    width: 100%;
+    position: relative;
+  }
+  .copy-hint {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0);
+    background: rgba(0,0,0,0);
+    transition: all 0.2s;
+    border-radius: 0;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .swatch-card:hover .copy-hint {
+    color: rgba(255,255,255,0.9);
+    background: rgba(0,0,0,0.18);
+  }
+  .swatch-bottom {
+    padding: 10px 12px 12px;
+  }
+  .swatch-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2px;
+  }
+  .swatch-hex {
+    font-family: monospace;
+    font-size: 0.68rem;
+    color: #aaa;
+  }
+  .swatch-role {
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ccc;
+    margin-top: 3px;
+  }
+
+  /* STRIP PREVIEW */
+  .strip-row {
+    display: flex;
+    border-radius: 14px;
+    overflow: hidden;
+    height: 48px;
+    margin-bottom: 48px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  }
+  .strip-row div { flex: 1; }
+
+  /* USAGE NOTES */
+  .usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .usage-card {
+    border-radius: 12px;
+    padding: 16px 18px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(0,0,0,0.07);
+  }
+  .usage-card .usage-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .usage-card .usage-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #555;
+    vertical-align: middle;
+  }
+  .usage-card .usage-desc {
+    font-size: 0.72rem;
+    color: #999;
+    margin-top: 6px;
+    line-height: 1.5;
+  }
+
+  /* TOAST */
+  #toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: #222;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.78rem;
+    padding: 10px 22px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none;
+    z-index: 9999;
+    letter-spacing: 0.02em;
+  }
+  #toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* DIVIDER */
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin: 0 0 36px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo">Hollow <span>Creek Farm</span></div>
+  <div class="header-tag">Seasonal Color Palettes</div>
+</header>
+
+<div class="page-title">
+  <div class="eyebrow">Brand Design System</div>
+  <h1>Four seasons,<br><em>four personalities</em></h1>
+  <p>Each palette is built to feel authentic to what's happening on the farm — click any swatch to copy the hex code.</p>
+</div>
+
+<div class="tab-row" id="tabRow"></div>
+
+<div id="panels"></div>
+
+<div id="toast"></div>
+
+<script>
+const seasons = [
+  {
+    id: "spring",
+    tab: "🌸 Spring",
+    label: "Spring · April – June",
+    headline: "Flower fields<br>are waking up.",
+    sub: "U-pick blooms, baby animals, and fresh meadow air.",
+    cta: "See the Flower Field",
+    heroGrad: "linear-gradient(135deg, #7BAE7F 0%, #A8C5A0 50%, #C8DDA0 100%)",
+    chipBg: "rgba(255,255,255,0.2)",
+    ctaBg: "#F9C6C9",
+    ctaColor: "#5A3D40",
+    tabColor: "#7BAE7F",
+    colors: [
+      { name: "Clover Cream",   hex: "#F4F0E6", role: "Background" },
+      { name: "Sage Mist",      hex: "#A8C5A0", role: "Primary" },
+      { name: "Blossom Pink",   hex: "#F9C6C9", role: "Accent" },
+      { name: "Butter Yellow",  hex: "#F5E6A3", role: "Highlight" },
+      { name: "Pasture Green",  hex: "#7BAE7F", role: "Button / CTA" },
+      { name: "Birch Brown",    hex: "#6B5744", role: "Text" },
+    ],
+    usage: [
+      { role: "Background",  hex: "#F4F0E6", desc: "Page background, large sections" },
+      { role: "Primary",     hex: "#A8C5A0", desc: "Hero cards, nav accents" },
+      { role: "Accent",      hex: "#F9C6C9", desc: "Flower field callouts, tags" },
+      { role: "Highlight",   hex: "#F5E6A3", desc: "Banners, seasonal notices" },
+      { role: "Button / CTA",hex: "#7BAE7F", desc: "\"Buy Tickets\", primary buttons" },
+      { role: "Text",        hex: "#6B5744", desc: "Body copy, headings" },
+    ]
+  },
+  {
+    id: "summer",
+    tab: "☀️ Summer",
+    label: "Summer · July – August",
+    headline: "Hot days,<br>fresh-picked days.",
+    sub: "Apple orchard tours, wagon rides, and golden afternoons.",
+    cta: "Plan Your Visit",
+    heroGrad: "linear-gradient(135deg, #C8860A 0%, #E8A820 55%, #F0C050 100%)",
+    chipBg: "rgba(255,255,255,0.2)",
+    ctaBg: "#6A9EC5",
+    ctaColor: "#fff",
+    tabColor: "#E8A820",
+    colors: [
+      { name: "Linen White",    hex: "#FAF5EC", role: "Background" },
+      { name: "Sunflower Gold", hex: "#E8A820", role: "Primary" },
+      { name: "Sky Blue",       hex: "#6A9EC5", role: "Accent" },
+      { name: "Meadow Green",   hex: "#5A8A5E", role: "Button / CTA" },
+      { name: "Peach Bloom",    hex: "#F0C9A0", role: "Highlight" },
+      { name: "Barn Brown",     hex: "#5C4033", role: "Text" },
+    ],
+    usage: [
+      { role: "Background",  hex: "#FAF5EC", desc: "Page background, card bases" },
+      { role: "Primary",     hex: "#E8A820", desc: "Hero banners, section accents" },
+      { role: "Accent",      hex: "#6A9EC5", desc: "Links, informational tags" },
+      { role: "Button / CTA",hex: "#5A8A5E", desc: "\"Buy Tickets\", CTAs" },
+      { role: "Highlight",   hex: "#F0C9A0", desc: "Pricing cards, feature boxes" },
+      { role: "Text",        hex: "#5C4033", desc: "All body text, headings" },
+    ]
+  },
+  {
+    id: "fall",
+    tab: "🎃 Fall",
+    label: "Fall · September – October",
+    headline: "Everything you<br>need before you arrive.",
+    sub: "Hours, location, and what to bring are all here for a calm, confident farm day.",
+    cta: "Buy Tickets",
+    heroGrad: "linear-gradient(135deg, #4A5E3A 0%, #6B7C5E 55%, #7A8C6A 100%)",
+    chipBg: "rgba(255,255,255,0.18)",
+    ctaBg: "#C8622A",
+    ctaColor: "#fff",
+    tabColor: "#C8622A",
+    colors: [
+      { name: "Warm Oat",       hex: "#EFE8D8", role: "Background" },
+      { name: "Forest Sage",    hex: "#6B7C5E", role: "Primary" },
+      { name: "Harvest Orange", hex: "#C8622A", role: "Accent / CTA" },
+      { name: "Pumpkin Spice",  hex: "#D4874E", role: "Highlight" },
+      { name: "Acorn Brown",    hex: "#8B5E3C", role: "Secondary" },
+      { name: "Deep Soil",      hex: "#3D2B1F", role: "Text" },
+    ],
+    usage: [
+      { role: "Background",  hex: "#EFE8D8", desc: "Page background, card bases" },
+      { role: "Primary",     hex: "#6B7C5E", desc: "Hero cards, nav, large panels" },
+      { role: "Accent / CTA",hex: "#C8622A", desc: "\"Buy Tickets\" button, links" },
+      { role: "Highlight",   hex: "#D4874E", desc: "Pumpkin patch callouts, tags" },
+      { role: "Secondary",   hex: "#8B5E3C", desc: "Subheadings, icon fills" },
+      { role: "Text",        hex: "#3D2B1F", desc: "All body copy and headings" },
+    ]
+  },
+  {
+    id: "winter",
+    tab: "❄️ Winter",
+    label: "Winter · Off-Season / Holiday",
+    headline: "Cozy up to<br>the farm this winter.",
+    sub: "Holiday events, winter CSA boxes, and seasonal farm news.",
+    cta: "Join Farm News",
+    heroGrad: "linear-gradient(135deg, #2A3E30 0%, #3E5C45 55%, #4A6E52 100%)",
+    chipBg: "rgba(255,255,255,0.18)",
+    ctaBg: "#A63228",
+    ctaColor: "#fff",
+    tabColor: "#3E5C45",
+    colors: [
+      { name: "Snowdrift",      hex: "#F0EEE8", role: "Background" },
+      { name: "Pine Green",     hex: "#3E5C45", role: "Primary" },
+      { name: "Cranberry",      hex: "#A63228", role: "Accent / CTA" },
+      { name: "Ice Blue",       hex: "#B8CDD6", role: "Highlight" },
+      { name: "Warm Birch",     hex: "#C4A882", role: "Secondary" },
+      { name: "Midnight Bark",  hex: "#2A2E28", role: "Text" },
+    ],
+    usage: [
+      { role: "Background",  hex: "#F0EEE8", desc: "Page background, card bases" },
+      { role: "Primary",     hex: "#3E5C45", desc: "Hero panels, nav, large areas" },
+      { role: "Accent / CTA",hex: "#A63228", desc: "Holiday CTAs, \"Buy Tickets\"" },
+      { role: "Highlight",   hex: "#B8CDD6", desc: "Frost accents, info callouts" },
+      { role: "Secondary",   hex: "#C4A882", desc: "Warm contrast, subheadings" },
+      { role: "Text",        hex: "#2A2E28", desc: "All body copy and headings" },
+    ]
+  }
+];
+
+const tabRow = document.getElementById('tabRow');
+const panelsEl = document.getElementById('panels');
+const toast = document.getElementById('toast');
+let toastTimer;
+
+function copyHex(hex) {
+  navigator.clipboard?.writeText(hex).catch(() => {});
+  clearTimeout(toastTimer);
+  toast.textContent = `Copied ${hex}`;
+  toast.classList.add('show');
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+function setActive(id) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.season-panel').forEach(p => p.classList.remove('active'));
+  const btn = document.querySelector(`.tab-btn[data-id="${id}"]`);
+  const panel = document.getElementById(`panel-${id}`);
+  const season = seasons.find(s => s.id === id);
+  btn.classList.add('active');
+  btn.style.background = season.tabColor;
+  panel.classList.add('active');
+  // Reset other buttons
+  document.querySelectorAll('.tab-btn').forEach(b => {
+    if (!b.classList.contains('active')) {
+      b.style.background = 'transparent';
+      b.style.color = '#777';
+      b.style.borderColor = 'rgba(0,0,0,0.15)';
+    }
+  });
+}
+
+seasons.forEach((s, i) => {
+  // Tab button
+  const btn = document.createElement('button');
+  btn.className = 'tab-btn';
+  btn.dataset.id = s.id;
+  btn.textContent = s.tab;
+  btn.onclick = () => setActive(s.id);
+  tabRow.appendChild(btn);
+
+  // Panel
+  const panel = document.createElement('div');
+  panel.className = 'season-panel';
+  panel.id = `panel-${s.id}`;
+
+  // Hero card
+  const hero = document.createElement('div');
+  hero.className = 'hero-card';
+  hero.innerHTML = `
+    <div class="hero-card-inner" style="background:${s.heroGrad}">
+      <div class="hero-chip">PLAN YOUR VISIT</div>
+      <h2>${s.headline}</h2>
+      <p>${s.sub}</p>
+      <button class="hero-cta" style="background:${s.ctaBg}; color:${s.ctaColor}">${s.cta}</button>
+    </div>
+  `;
+  panel.appendChild(hero);
+
+  // Palette grid label
+  const gridLabel = document.createElement('div');
+  gridLabel.className = 'palette-section-label';
+  gridLabel.textContent = `${s.label} — Color Palette`;
+  panel.appendChild(gridLabel);
+
+  // Palette grid
+  const grid = document.createElement('div');
+  grid.className = 'palette-grid';
+  s.colors.forEach(c => {
+    const card = document.createElement('div');
+    card.className = 'swatch-card';
+    card.onclick = () => copyHex(c.hex);
+    card.innerHTML = `
+      <div class="swatch-top" style="background:${c.hex}">
+        <div class="copy-hint">Copy</div>
+      </div>
+      <div class="swatch-bottom">
+        <div class="swatch-name">${c.name}</div>
+        <div class="swatch-hex">${c.hex}</div>
+        <div class="swatch-role">${c.role}</div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+  panel.appendChild(grid);
+
+  // Color strip
+  const strip = document.createElement('div');
+  strip.className = 'strip-row';
+  s.colors.forEach(c => {
+    const d = document.createElement('div');
+    d.style.background = c.hex;
+    d.title = c.hex;
+    strip.appendChild(d);
+  });
+  panel.appendChild(strip);
+
+  // Usage notes label
+  const usageLabel = document.createElement('div');
+  usageLabel.className = 'palette-section-label';
+  usageLabel.textContent = 'How to use each color';
+  panel.appendChild(usageLabel);
+
+  // Usage grid
+  const uGrid = document.createElement('div');
+  uGrid.className = 'usage-grid';
+  s.usage.forEach(u => {
+    const card = document.createElement('div');
+    card.className = 'usage-card';
+    card.innerHTML = `
+      <span class="usage-dot" style="background:${u.hex}"></span>
+      <span class="usage-label">${u.role}</span>
+      <div class="usage-desc">${u.desc}</div>
+    `;
+    uGrid.appendChild(card);
+  });
+  panel.appendChild(uGrid);
+
+  panelsEl.appendChild(panel);
+});
+
+// Init to fall
+setActive('fall');
+</script>
+</body>
+</html>
